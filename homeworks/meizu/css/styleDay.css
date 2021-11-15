@@ -1,0 +1,32 @@
+.style-day .detail ul {
+    /* 5个li标签宽度1245px */
+    width: 1245px;
+    height: 140px;
+    margin-top: 6px;
+    /* 清除浮动 */
+    overflow: hidden;
+}
+.style-day .detail ul li {
+    float: left;
+    width: 244px;
+    height: 140px;
+    margin-right: 5px;
+}
+.style-day .detail ul li.current {
+    background-color: #F9F9F9;
+}
+.style-day .detail ul li .four {
+    float: left;
+    width: 61px;
+    height: 41px;
+    margin: 15px 31px 15px 30px;
+    text-align: center;
+}
+.style-day .detail ul li .four dd {
+    font-size: 12px;
+    color: #333333;
+}
+.style-day .detail ul li .four dt img {
+    width: 24px;
+    height: 24px;
+}

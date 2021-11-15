@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15_判断这个数字能否被5、6整除</title>
+    <script>
+        var num = parseInt(prompt("请输入一个数字"));
+        if (num % 5 == 0) {
+            if (num % 6 == 0) {
+                alert("这个数字同时能被5和6整除");
+            } else {
+                alert("这个数字能被5,但是不能被6整除");
+            }
+        } else {
+            if (num % 6 == 0) {
+                alert("这个数字能被6,但是不能被5整除");
+            } else {
+                alert("这个数字不能被5整除,也不能被6整除");
+            }
+        }
+
+        // if 语句是有跳楼现象
+        // if 语句有隐含条件，如果能走到后面的分支，说明前面的条件肯定不成立
+        if (num % 5 === 0 && num % 6 === 0) {
+            alert("这个数字同时能被5和6整除");
+        } else if (num % 5 === 0) {  //如果能走到这个分支，说明前面条件不成立，如果这个条件为真，只能说明不能被6整除是肯定的
+            // 在这里如果条件成立，说明不能被6整除，但是被5整除
+            alert("这个数字能被5整除，但是不能被6整除");
+        } else if (num % 6 === 0) {
+            alert("这个数字能被6整除，但是不能被5整除");
+        } else {
+            alert("这个数字既不能被5整除，也不能被6整除")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

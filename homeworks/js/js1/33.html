@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var height = parseInt(prompt("请输入您的身高cm","180"));
+        var weight = parseInt(prompt("请输入您的体重","140"));
+        var bzweight = (height - 108) * 2;
+        if (weight >= bzweight - 10 && weight <= bzweight + 10) {
+            alert("你的体重是标准体重");
+        } else if (weight > bzweight + 10) {
+            alert("你的体重是超重");
+        } else {
+            alert("你的体重是偏瘦");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

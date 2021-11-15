@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Symbol 补充
+        
+        // console.log(Symbol("foo") === Symbol("foo"))
+    
+        // for 静态方法，参数是字符串且相等时，二者相等，若参数不为字符串会强制转成字符串
+        // const a = Symbol.for(true)
+        // const b = Symbol.for('true')
+        // console.log(a === b)
+    
+        // const obj = {
+            // 改标签标识
+        //     [Symbol.toStringTag]: "XObject"
+        // }
+        // console.log(obj.toString())
+    
+        const obj = {
+            // 适合作为私有属性名
+            [Symbol()]: "Symbol value",
+            foo: "foo value"
+        }
+        // for (var k in obj) {
+        //     console.log(k)
+        // }
+        // 只能获取symbol属性名
+        console.log(Object.getOwnPropertySymbols(obj))
+        // 获取属性名，symbol除外
+        // console.log(Object.keys(obj))
+        // 获取键值json格式
+        // console.log(JSON.stringify(obj))
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		// 编写函数 rightchange(char,n) 实现字符串 char 循环右移 n 位。
+		// 比如rightchange("abcdefg",2) 返回"fgabcde"
+
+		// 思路 1：字符串转为单个字母的数组→数组多次尾删首推 →数组转字符串
+		console.log(rightchange("abcdefg",22));
+		// 定义函数
+		function rightchange(char,n) {
+			n = n % char.length;
+			// 字符串转数组
+			var arr = char.split("");
+			// 循环让数组尾删首推 n 次
+			for (var i = 1 ; i <= n ; i++) {
+				arr.unshift(arr.pop());
+			}
+			// 数组转回字符串
+			char = arr.join("");
+			return char;
+		}
+
+		// 思路 2：根据 n 的数值，进行字符串截取，截取成两段，再给两个字符串颠倒顺序拼接。
+		// 截取过程中跟 n 找位置关系，考虑 n 是否大于字符串长度。
+		function rightchange(char,n) {
+			// 最终移动的效果相当于移动了 n 取字符串长度的余数的次数
+			n = n % char.length;
+			// 截取两段字符串
+			var str1 = char.slice(0,-n);
+			var str2 = char.slice(-n);
+			// 字符串颠倒顺序拼接
+			char = str2 + str1;
+			return char;
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13_天数确定星期几</title>
+    <script>
+        var week = parseInt(prompt("请输入起始星期几，（1-7）"));
+        var day = parseInt(prompt("请输入一个天数："));
+
+        // 分析思路：
+        // 今天是星期 2，1 天之后是星期 3
+        // 今天是星期 2，2 天之后是星期 4
+        // 今天是星期 2，3 天之后是星期 5
+        // 今天是星期 2，4 天之后是星期 6
+        // 今天是星期 2，5 天之后是星期 7   ，找到一个规律 今天的值等于 2 + day
+        // 今天是星期 2，6 天之后是星期 1   ，找到一个规律 今天的值等于 （2 + day） % 7
+
+
+
+        var yushu = (day + week) % 7 ;
+        if (yushu === 0) {
+            yushu = "日";
+        }
+        alert("若今天是星期" + week + "," + day + "天之后，是星期" + yushu);
+        // switch (yushu) {
+        //     case 1:
+        //         alert("若今天是星期" + week + "," + day + "天之后，是星期一");
+        //         break;
+        //     case 2 :
+        //         alert("若今天是星期" + week + "," + day + "天之后，是星期二");
+        //         break;
+        //     case 3 :
+        //         alert("若今天是星期" + week + "," + day + "天之后，是星期三");
+        //         break;
+        //     case 4 :
+        //         alert("若今天是星期" + week + "," + day + "天之后，是星期四");
+        //         break;
+        //     case 5 :
+        //         alert("若今天是星期" + week + "," + day + "天之后，是星期五");
+        //         break;
+        //     case 6 :
+        //         alert("若今天是星期" + week + "," + day + "天之后，是星期六");
+        //         break;
+        //     default:
+        //         alert("若今天是星期" + week + ","+ day + "天之后，是星期日");
+        //         break;
+        // }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

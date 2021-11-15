@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select {
+          width: 200px;
+          height: 200px;
+          background-color: #33cccc;
+          font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- multiple 多选 给定高度全部显示 -->
+    <select id="all" size="5" multiple="multiple">
+        <option>苹果</option>
+        <option>橘子</option>
+        <option>梨</option>
+        <option>西瓜</option>
+        <option>水蜜桃</option>
+    </select>
+
+    <input type="button" value=">>" id="btn1">
+    <input type="button" value="<<" id="btn2">
+    <input type="button" value=">" id="btn3">
+    <input type="button" value="<" id="btn4">
+
+    <select id="choose" multiple="multiple">
+    </select>
+
+    <script src="common.js"></script>
+    <script>
+        // 获取元素
+        var all = my$("all");
+        var choose = my$("choose");
+        var btn1 = my$("btn1");
+        var btn2 = my$("btn2");
+        var btn3 = my$("btn3");
+        var btn4 = my$("btn4");
+        // 给第一个按钮添加点击事件，让 all 中的所有子元素移动到 choose 中
+        btn1.onclick = function () {
+            var opts = all.children;  //内部的元素时动态添加的，移动元素数组改变
+            // 获取 all 中所有的子元素
+            // 获取最开始的数组的个数
+            var n = opts.length;
+            // console.log(n);
+            // 将所有的 opts 中的元素添加给 choose
+            for (var i = 0; i < n; i++) {
+                choose.appendChild(opts[0]);
+            }
+        };
+        btn2.onclick = function () {
+            var chooses = choose.children;  //内部的元素时动态添加的，移动元素数组改变
+            // 获取 choose 中所有的子元素
+            // 获取最开始的数组的个数
+            var n = chooses.length;
+            // console.log(n);
+            // 将所有的 opts 中的元素添加给 choose
+            for (var i = 0; i < n; i++) {
+                all.appendChild(chooses[0]);
+            }
+        };
+
+        // 单选移动
+        btn3.onclick = function () {
+            var opts = all.children;  //内部的元素时动态添加的
+            // 移动的内容希望可以是固定的一个数组中的项
+            var arr = [];
+            // 通过判断条件，往 arr 中添加需要移动的元素
+            for (var i = 0; i < opts.length; i++) {
+                if (opts[i].selected === true) {
+                    arr.push(opts[i]);
+                }
+            }
+            // console.log(opts);
+            // console.log(arr);
+            // 对需要移动的固定数组进行遍历
+            for (var j = 0; j < arr.length; j++) {
+                choose.appendChild(arr[j]);
+                // 取消选中的背景颜色
+                arr[j].selected = false;
+            }
+        };
+        btn4.onclick = function () {
+            var chooses = choose.children;  //内部的元素时动态添加的
+            // 移动的内容希望可以是固定的一个数组中的项
+            var arr = [];
+            // 通过判断条件，往 arr 中添加需要移动的元素
+            for (var i = 0; i < chooses.length; i++) {
+                if (chooses[i].selected === true) {
+                    arr.push(chooses[i]);
+                }
+            }
+            // 对需要移动的固定数组进行遍历
+            for (var j = 0; j < arr.length; j++) {
+                all.appendChild(arr[j]);
+                arr[j].selected = false;
+            }
+        };
+    </script>
+</body>
+</html>

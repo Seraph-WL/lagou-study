@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 10人成绩
+        var cj = [98,85,56,67,88,63,96,78,45,85];
+        // 思路：总成绩 -> 平均成绩 -> 依次比较大于等于平均成绩
+        // 平均成绩函数
+        // 说明：遍历相加总成绩，除10平均成绩，返回平均成绩
+        function avg(n) {
+            // 累加器
+            var sum = 0;
+            // 循环遍历相加
+            for (var i = 0 ; i <= n.length - 1 ; i++) {
+                sum += cj[i];
+            }
+            var a = sum / 10;
+            // console.log(a);
+            // 返回平均值
+            return a;
+        }
+        // 大于等于平均成绩函数
+        // 说明：循环比较，统计大于等于平均成绩人数
+        function person(m) {
+            // 累加器
+            var count = 0;
+            // 循环比较
+            for (var i = 0 ; i <= cj.length - 1 ; i++) {
+                if (m <= cj[i]) {
+                    count++;
+                }
+            }
+            // 返回人数
+            return count;
+        }
+        // 输出人数
+        console.log(person(avg(cj)));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

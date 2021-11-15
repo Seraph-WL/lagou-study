@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part1.模块二代码作业动画</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .gules {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 500px auto;
+        background-color: red;
+        animation: move2 6S linear 2s infinite;
+    }
+
+    /* 定义一个按照动画
+    第一步  水平向右移动500px
+    第二步  向下移动500px
+    第三步  向左移动500px
+    第四步  向上500px
+     */
+    @keyframes move2 {
+        0% {
+            transform: translateX(0);
+        }
+
+        20% {
+            /* X轴 正数向右 */
+            transform: translate(500px);
+        }
+
+        40% {
+            /* Y轴 正数向下 */
+            transform: translate(500px,500px);
+        }
+
+        60% {
+            /* X轴 负数向左 */
+            transform: translate(0,500px);
+        }
+
+        80% {
+            /* Y轴 负数向上 */
+            transform: translate(0,0);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+</style>
+
+<body>
+    <div class="gules"></div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:3000/posts");
+        // 以对象的形式表述响应体， 其类型取决于 responseType 的值
+        // responseType 要在调用 open() 初始化请求之后， 在调用 send() 发送请求到服务器之前
+        xhr.responseType = "json";
+        xhr.onload = function () {
+            console.log(this.response);
+        }
+        xhr.send(null);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

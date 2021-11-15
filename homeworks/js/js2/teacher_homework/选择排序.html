@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [89,34,76,66,98,25,67];
+
+    for (var i = 0 ; i < arr.length - 1 ; i++) {
+      // 记录一下当前的数组的下标 i,当做判断依据
+      var m = i;
+      // 判断 i 项以后的项，有没有比当前项大的，如果有，替换掉 m 的记录下标
+      for (var j = i+1 ; j < arr.length ; j++) {
+        if (arr[j] > arr[m]) {
+          m = j;
+        }
+      }
+      if (m !== i) {
+        var old = arr[i];
+        arr[i] = arr[m];
+        arr[m] = old;
+      }
+    }
+    console.log(arr);
+  </script>
+</body>
+</html>

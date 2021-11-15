@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a id="box" href="./01_prepare.html">123</a>
+    <script>
+        box.onclick = function () {
+            return false
+        }
+        // Map 数据结构 解决对象不能一一映射的问题，不再只是字符串才能当做键
+        // 对象中只能使用字符串当我们的键
+        // const obj = {}
+        // obj[true] = "boolean"
+        // obj[123] = "number"
+        // obj[{a: 1}] = "object"
+
+        // keys方法输出对象的所有的键
+        // console.log(Object.keys(obj))
+        // console.log(obj[{}])
+        // console.log(obj['[object Object]'])
+
+        const map = new Map()
+        const a = { a: 1}
+        // 设置键和值
+        map.set(a,100)
+        console.log(map)
+        // 获取键的值
+        console.log(map.get(a))
+        
+        // map.has()
+        // map.delete()
+        // map.clear()
+
+        map.forEach((value,key) => {
+            console.log(key,value)
+        })
+    </script>
+</body>
+</html>

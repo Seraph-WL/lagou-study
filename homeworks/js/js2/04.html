@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 思路：从 100~999 找出喇叭花数 -> 判断喇叭花数 -> 求阶乘和
+        // 求阶乘函数
+        // 说明：传入一个整数，求这个数的阶乘，返回阶乘值
+        function jc(a) {
+            // 累乘器
+            var mul = 1;
+            // a~1 整数累乘
+            for (var i = a ; i > 0 ; i--) {
+                mul *= i;
+            }
+            // 返回阶乘值
+            return mul;
+        }
+        // 判断喇叭花数函数
+        // 说明：传入一个三位数，判断是否是喇叭花数，返回 true 或 false
+        function isLbh(a) {
+            // 求三位数的各位的数
+            var ge = a % 10;
+            var shi = parseInt(a / 10) % 10;
+            var bai = parseInt(a / 100);
+            // 求各 位的 数的阶乘和
+            var sum = jc(ge) + jc(shi) + jc(bai);
+            // 判断阶乘和与三位数是否相等
+            if (sum === a) {
+                return true;
+            } else {
+                return false;
+            }
+        } 
+        // 输出喇叭花数
+        for (var i = 100; i <= 999 ; i++) {
+           if (isLbh(i)) {
+               console.log(i);
+           } 
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

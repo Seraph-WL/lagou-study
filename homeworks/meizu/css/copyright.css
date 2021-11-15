@@ -1,0 +1,53 @@
+/* 版权部分 */
+.copyright {
+    width: 100%;
+    height: 115px;
+    background-color: #FAFAFC;
+}
+.copyright-c {
+    height: 20px;
+    padding-top: 38px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    color: #666666;
+}
+.copyright-c .copyright-title {
+    float: left;
+    margin-left: 172px;
+    margin-right: 13px;
+}
+.copyright-c .icp {
+    float: left;
+    margin-right: 13px;
+}
+.copyright-c .permit {
+    float: left;
+    margin-right: 13px;
+}
+.copyright-c .zhizhao {
+    float: left;
+    margin-right: 13px;
+}
+.copyright-c .icon-a {
+    float: left;
+    width: 15px;
+    height: 18px;
+    margin-right: 13px;
+    background: url(../images/footer-copy-1.png) no-repeat;
+}
+.copyright-c .icon-b {
+    float: left;
+    width: 15px;
+    height: 19px;
+    margin-right: 13px;
+    background: url(../images/footer-copy-1.png) no-repeat;
+}
+.copyright-c .icon-c {
+    float: left;
+    width: 20px;
+    height: 15px;
+    margin-right: 13px;
+    background: url(../images/trust-icon.png) no-repeat;
+}

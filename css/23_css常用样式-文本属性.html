@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 300px;
+            height: 300px;
+            background-color: cyan;
+            font-size: 14px;
+            /* 水平对齐 居中：center 左对齐：left 右对齐：right */
+            text-align: left;
+            /* 文本缩进，2em 表示两个中文字符长度 属性值区分正负：正数向右缩进 负数向左缩进 */
+            text-indent: 2em;
+        }
+        .none {
+            text-decoration: none;
+        }
+        .over {
+            text-decoration: overline;
+        }
+        .through {
+            text-decoration: line-through;
+        }
+        .under {
+            text-decoration: underline;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <p>这是一段文字</p>
+    <div class="none">没有线条</div>
+    <div class="over">上划线</div>
+    <div class="through">中划线</div>
+    <div class="under">下划线</div>
+    <del>删除线</del>
+    <a href="">超级链接自带下划线</a>
+</body>
+</html>

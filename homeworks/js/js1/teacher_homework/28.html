@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28</title>
+    <script>
+        // 苹果3元一个，鸭梨2元一个，桃子1元一个。现在想用200元正好买100个水果
+        // 最多买100个水果
+        // for (var apple = 0; apple <= 100; apple++) {
+        //     for (var pear = 0; pear <= 100; pear++) {
+        //         for (var peach = 0; peach <= 100; peach++) {
+        //             if (3 * apple + 2 * pear + 1 * peach == 200 && apple + pear + peach == 100) {
+        //                 console.log('苹果的个数' + apple, '梨的个数' + pear, '桃的个数' + peach);
+        //             }
+        //         }
+        //     }
+        // }
+
+        // 化简写法
+        // 第一步：程序有极限值
+        for (var i = 0; i <= 50; i++) {
+            // 通过方程运算
+            // 3 * i + 2 * j + k == 200
+            // i + j + k == 100
+            var j = 100 - 2 * i;
+            var k = i;
+            console.log(i, j, k);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

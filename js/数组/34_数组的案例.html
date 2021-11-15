@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 定义一个数组
+        var arr = [45,56,77,88,99,32,55,74,100];
+        // 累加器，累计数组每一项的和，初始值是 0
+        var sum = 0;
+        // 数组遍历，将每一项累加到 sum 里
+        for (var i = 0; i <= arr.length - 1; i++) {
+            sum += arr[i];
+        }
+        // 输出sum
+        console.log("这组成绩的总和是" + sum);
+        // 求取平均值 = 总和 / 班级人数
+        var avg = sum / arr.length;
+        console.log("这个班的平均成绩是" + avg);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

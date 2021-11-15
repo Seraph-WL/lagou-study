@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户输入
+        var n = prompt("请输入一个字符串","spring");
+        // 思路：字符串转为数组 -> 数组倒置 -> 转字符串 -> 输出字符串
+        // 字符串倒置函数
+        // 说明：输入一个字符串，转为数组，倒置，转字符串
+        function rev(char) {
+            // 链式调用方法
+            var a = char.split("").reverse().join("");
+            // 返回倒置的字符串
+            return a;
+        }
+        // 输出字符串
+        console.log(rev(n));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

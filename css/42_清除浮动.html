@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 1000px;
+            /* 强制给父元素一个合适高度 清除浮动 */
+            /* height: 100px; */
+            border: 10px solid #f00;
+            margin-bottom: 10px;
+            /* 清除浮动 */
+            /* clear: both; */
+            /* 溢出隐藏 不设置高度会自适应高度 设置高度直接隐藏 */
+            /* overflow: hidden; */
+        }
+        .box p {
+            float: left;
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+            background-color: skyblue;
+        }
+        .cl {
+            /* height: 10px; */
+            clear: both;
+        }
+        /* :after 伪类选择器 */
+        .clearfix:after {
+            /* 添加文字内容 */
+            content: "1";
+            /* 文字（类似行内）转块元素 */
+            display: block;
+            /* 消除1撑高父元素的影响 */
+            height: 0;
+            clear: both;
+            /* 隐藏但保留原来占有的位置 display：hidden是隐藏让出原位置 */
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="box clearfix">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <!-- 内墙法 -->
+        <!-- <div class="cl"></div> -->
+    </div>
+    <!-- 外墙法 -->
+    <!-- <div class="cl"></div> -->
+    <div class="box clearfix">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <!-- <div class="cl"></div> -->
+    </div>
+</body>
+</html>

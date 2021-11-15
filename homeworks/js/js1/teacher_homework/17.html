@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_判断这个年是否是闰年</title>
+    <script>
+        var num = parseInt(prompt("请输入一个年份"));
+        if (num % 100 != 0) {
+            if (num_two % 4 == 0) {
+                alert(num + "年是闰年");
+            }else {
+                alert(num + "年不是闰年");
+            }
+        }else {
+            if (num % 400 == 0) {
+                alert(num + "年是闰年");
+            }else {
+                alert(num + "年不是闰年");
+            }
+        }
+
+        // 只有两个分支输出的时候，可以用简单的 if 语句
+        // 要么整百年份除 400，要么非整百年份除 4
+        if (num % 400 === 0 || num % 100 !== 0 && num % 4 === 0) {
+            alert(num + "年是闰年");
+        }else {
+            alert(num + "年不是闰年");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

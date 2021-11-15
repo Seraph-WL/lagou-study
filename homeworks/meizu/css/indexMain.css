@@ -1,0 +1,100 @@
+/* 主要内容区域中的分类和焦点图 */
+.content .main {
+    width: 100%;
+    height: 480px;
+}
+/* 侧边栏 */
+.content .main .aside {
+    float: left;
+    position: absolute;
+    width: 244px;
+    height: 480px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 3;
+}
+.content .main .aside .classify {
+    width: 244px;
+    height: 480px;
+}
+.content .main .aside .classify li {
+    position: relative;
+    width: 100%;
+    height: 57px;
+    line-height: 57px;
+}
+.content .main .aside .classify li a {
+    float: left;
+    margin-left: 30px;
+    font-size: 14px;
+}
+.content .main .aside .classify .up {
+    margin-top: 13.5px;
+}
+/* 焦点图  轮播图浮动做出效果 父级进行定位 */
+.content .main .banner {
+    float: right;
+    width: 1240px;
+    height: 480px;
+    background-color: yellow;
+    position: relative;
+    /* 隐藏后面图片 */
+    overflow: hidden;
+    z-index: 2;
+}
+/* 图像向左运动 left值为负不断变化 */
+.content .main .banner ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6000px;
+    height: 480px;
+} 
+.content .main .banner ul li {
+    float: left;
+    width: 1240px;
+    height: 480px;
+}
+/* 左右箭头 */
+.content .main .banner .btn .left-btn {
+    position: absolute;
+    top: 50%;
+    width: 9px;
+    height: 16px;
+    margin-top: -8px;
+    margin-left: 254px;
+    background: url(../images/banner_arrow_left_highlight.png) no-repeat center center;
+    background-size: 9px 16px;
+    cursor: pointer;
+}
+.content .main .banner .btn .right-btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 9px;
+    height: 16px;
+    margin-top: -8px;
+    margin-right: 10px;
+    background: url(../images/banner_arrow_right_highlight.png) no-repeat center center;
+    background-size: 9px 16px;
+    cursor: pointer;
+}
+/* 小圆点 */
+.content .main .banner ol {
+    position: absolute;
+    left: 60%;
+    bottom: 10px;
+    width: 105px;
+    height: 11px;
+    margin-left: -63px;
+}
+.content .main .banner ol li {
+    float: left;
+    width: 11px;
+    height: 11px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.2);
+}
+.content .main .banner ol li.current {
+    background-color: #00C3F5;
+}

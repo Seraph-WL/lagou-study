@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24_水仙花数</title>
+    <script>
+        for (var i = 1000; i <= 9999; i++) {
+            //求个，十，百 ，千
+            var ge = i % 10;
+            var shi = parseInt(i / 10) % 10;
+            var bai = parseInt(i / 100) % 10;
+            var qian = parseInt (i / 1000);
+
+            //水仙花数特点，每个数位的四次方和等于它本身。
+            var sum = ge * ge * ge * ge + shi * shi * shi * shi + bai * bai * bai * bai + qian * qian * qian * qian;
+            if ( i == sum ) {
+                console.log(i);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

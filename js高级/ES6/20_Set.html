@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Set 数据结构
+        // const s = new Set()
+        // 添加 重复自动过滤
+        // s.add(1).add(2).add(3).add(4).add(2)
+        // console.log(s)
+        // 遍历方法
+        // s.forEach(i => console.log(i))
+
+        // 循环
+        // for (let i of s) {
+        //     console.log(i)
+        // }
+
+        // 长度
+        // console.log(s.size)
+
+        // 包含 返回布尔值
+        // console.log(s.has(4))
+
+        // 删除某个指定值，返回布尔值 删除成功返回true
+        // console.log(s.delete(100))
+        // console.log(s)
+
+        // 清除当前集合中全部内容
+        // s.clear()
+        // console.log(s)
+
+        // 数组去重
+        const arr = [1.3, 4, 6, 2, 4, 7, 5, 8]
+        // const b = new Set(arr)
+        // 转成数组
+        // const b = Array.from(new Set(arr))
+
+        const b = [...new Set(arr)]
+        console.log(b)
+    </script>
+</body>
+
+</html>

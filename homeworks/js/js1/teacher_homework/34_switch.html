@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>34_switch</title>
+   <script>
+      var grade = prompt("请输入分数");
+        switch (parseInt(grade / 10)) {
+             case 10:
+                alert("你的成绩等级为优秀");
+                break;
+             case 9:
+                alert("你的成绩等级为优秀");
+                break;
+             case 8:
+                alert("你的成绩等级为良好");
+                break;
+             case 7:
+                alert("你的成绩等级为良好");
+                break;
+             case 6:
+                 alert("你的成绩等级为良好");
+                 break;
+             default:
+                 alert("你的成绩等级为不及格，继续加油哦！");
+         }
+
+      // switch 语句中，通过 小括号 内部的表达式的值，与 case后的值进行对比
+      switch (true) {
+         case grade >= 9:
+            alert("你的成绩等级为优秀");
+            break;
+         case grade >= 6:
+            alert("你的成绩等级为良好");
+            break;
+         default:
+            alert("你的成绩等级为不及格，继续加油哦！");
+      }
+   </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

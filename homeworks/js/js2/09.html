@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户输入
+        var n = prompt("请输入一个字符串","abcdefg");
+        var m = prompt("字符串向右循环位数","2");
+        // 思路：字符串循环n位 -> 字符串转数组 —> 数组尾删首推 -> 数组转字符串
+        // 字符串循环函数
+        // 说明：
+        function rightchange(char,n) {
+            n = n % char.length;
+            // 字符串转数组
+            var xh = char.split("");
+            // 循环尾删首推
+            for (var i = 1 ; i <=n ; i++) {
+                xh.unshift(xh.pop());
+            }
+            // 数组转字符串
+            var str = xh.join("");
+            return str;
+        }
+        // 输出字符串
+        console.log(rightchange(n,m));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

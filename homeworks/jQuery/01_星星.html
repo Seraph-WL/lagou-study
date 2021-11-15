@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星星</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <style>
+        #dv span {
+            font-size: 50px;
+            width: 260px;
+            background-color: #cccccc;
+            color: Yellow;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            // 定义是否被点击选中星星
+            var isChecked = false;
+            $("#dv>span").mousemove(function () {
+                if (!isChecked) {
+                    // 没被选中时，鼠标移上哪个 span ，让它和前面的 span 内容为 ★，后面的 span 内容为 ☆
+                    $(this).text("★").prevAll().text("★").end().nextAll().text("☆");
+                }
+            }).mouseout(function () {
+                if (!isChecked) {
+                    // 鼠标离开后，如果没有点击选择，就让所有 span 内容恢复为 ☆
+                    $("#dv>span").text("☆");
+                }
+            }).click(function () {
+                // 鼠标点击了某个 span，表示选择
+                // 后期鼠标移上或离开，都会保持当前选中的状态
+                isChecked = true;
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="dv">
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+    </div>
+
+</body>
+
+</html>

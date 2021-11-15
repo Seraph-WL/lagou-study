@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var arr = [1,1,1,2,2,3,4,5,6,3,4,2,4,1];
+    // 思路1：比较第 i 项和后面的项是否相同，相同则删除数组后面的项
+    function unique (arr) {
+      for (var i = 0 ; i <= arr.length - 1; i++) {
+        // 比较当前项和后面所有的项
+        for (var j = i + 1; j <=arr.length - 1; j++) {
+          if (arr[i] === arr[j]) {
+            // 删除第 j 项
+            arr.splice(j,1);
+            // 当前项没有后，不能直接 j++，会跳过一项，必须给 当前的 j 减 1
+            j--;
+          }
+        }
+      }
+      return arr;
+    }
+    // 思路2：利用 indexOf() 方法，判断某一项是否存在于数组中
+    function unique (arr) {
+      var newArr = [];
+      for (var i = 0 ; i <= arr.length - 1; i++) {
+        // 如果第 i 项不存在与新数组中，添加到新数组
+        if (newArr.indexOf(arr[i]) === -1) {
+          newArr.push(arr[i]);
+        }
+      }
+      return newArr;
+    }
+    console.log(unique(arr));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

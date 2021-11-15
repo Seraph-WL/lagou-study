@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-image: url(images/bg4.jpg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            /* 背景附着 fixed 参考点为浏览器窗口左上顶点 背景图固定
+            scroll 背景图与盒子保持相对位置不变 滚动 */
+            background-attachment: fixed;
+            /* background: url(images/bg4.jpg) no-repeat center top fixed cyan; */
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            border: 10px dashed #f00;
+            margin: 50px;
+            /* 背景颜色 */
+            background-color: cyan;
+            /* 背景图片 */
+            background-image: url(images/meng.jpg);
+            /* 背景重复 背景图是否在盒子重复加载 no-repeat背景图在border内 */
+            background-repeat: no-repeat;
+            /* 背景图坐标 */
+            background-position: center center;
+            /* background-position: 0 0; */
+        }
+        .house {
+            width: 120px;
+            height: 88px;
+            background-image: url(images/tree.jpg);
+            background-repeat: no-repeat;
+            background-position: -200px -21px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="box">111</div>
+    <div class="house"></div>
+</body>
+</html>

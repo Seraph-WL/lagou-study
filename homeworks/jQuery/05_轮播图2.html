@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .carousel {
+            position: relative;
+            width: 600px;
+            height: 360px;
+            border: 1px solid #ddd;
+            margin: 100px auto;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .carousel ul li {
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 360px;
+            /* 3D空间，值为flat是平面 */
+            transform-style: preserve-3d;
+            /* 透视 */
+            perspective: 50000px;
+            transition: all 1s ease 0s;
+        }
+
+        .carousel ul li:nth-child(1) {
+            left: 0;
+            /* background-color: rgb(36, 235, 235); */
+            transition-delay: 0s;
+        }
+
+        .carousel ul li:nth-child(2) {
+            left: 150px;
+            /* background-color: rgb(255, 0, 157); */
+            /* background-image: url(images/pic1.jpg);
+            background-size: 600px 360px;
+            background-position: -150px 0; */
+            transition-delay: .1s;
+        }
+
+        .carousel ul li:nth-child(3) {
+            left: 300px;
+            /* background-color: rgb(93, 85, 212); */
+            /* background-image: url(images/pic1.jpg);
+            设置大小，图片可以完整显示，不是只显示一部分，center center遇到图片和边框宽高不一致会出现白边
+            background-size: 600px 360px;
+            background-position: -300px 0; */
+            transition-delay: .2s;
+        }
+
+        .carousel ul li:nth-child(4) {
+            left: 450px;
+            /* background-color: rgb(86, 185, 77); */
+            /* background-image: url(images/pic1.jpg);
+            background-size: 600px 360px;
+            background-position: -450px 0; */
+            transition-delay: .3s;
+        }
+
+        .carousel ul li div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 360px;
+            background-size: 600px 360px;
+        }
+
+        .carousel ul li div:nth-child(1) {
+            background-image: url(images/pic1.jpg);
+            /* transform: translateZ(180deg); */
+            transform: rotateX(0deg) translateZ(180px);
+        }
+
+        .carousel ul li div:nth-child(2) {
+            background-image: url(images/pic2.jpg);
+            transform: rotateX(90deg) translateZ(180px);
+        }
+
+        .carousel ul li div:nth-child(3) {
+            background-image: url(images/pic3.jpg);
+            transform: rotateX(180deg) translateZ(180px);
+        }
+
+        .carousel ul li div:nth-child(4) {
+            background-image: url(images/pic4.jpg);
+            transform: rotateX(270deg) translateZ(180px);
+        }
+
+        /* 设置每个 li 标签中所有的 div 的背景图片定位 */
+        .carousel ul li:nth-child(1) div {
+            background-position: 0 0;
+        }
+
+        .carousel ul li:nth-child(2) div {
+            background-position: -150px 0;
+        }
+
+        .carousel ul li:nth-child(3) div {
+            background-position: -300px 0;
+        }
+
+        .carousel ul li:nth-child(4) div {
+            background-position: -450px 0;
+        }
+
+        .btn {
+            display: block;
+            width: 100px;
+            height: 50px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="carousel">
+        <ul>
+            <li>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+            <li>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </li>
+        </ul>
+
+    </div>
+    <input type="button" value="下一张" class="btn">
+
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        var btn = $('.btn')
+        var lis = $('.carousel ul li')
+        var sem = 0
+
+        // 给事件添加一把锁，用于防抖
+        var lock = false
+
+        btn.click(function () {
+            // 先判断锁的状态
+            if (lock) return
+            // 一旦动画开始，就上锁
+            lock = true
+            sem -= 90
+
+            lis.css({
+                "transform": "rotateX(" + sem + "deg)"
+            })
+            // 动画执行完成时，释放锁
+            var timeout = (1 + 0.1 * lis.length) * 1000
+            setTimeout(function () {
+                lock = false
+            }, timeout)
+        })
+    </script>
+
+</body>
+
+</html>

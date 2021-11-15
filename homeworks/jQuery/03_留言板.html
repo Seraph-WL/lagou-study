@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>留言板</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <style type="text/css">
+        #main {
+            background-color: coral;
+            margin: 0px auto;
+            width: 500px;
+        }
+
+        #dv {
+            /*position:relative;*/
+            margin-left: 48px;
+        }
+
+        #btndv {
+            margin-left: 422px;
+        }
+
+        .pContent {
+            width: 422px;
+            margin-left: 78px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#btn").click(function () {
+                //得到用户输入的昵称和内容
+                var $nickname = $("#nickname").val();
+                var $content = $("#content").val();
+                // 获取匿名的复选框选中情况
+                var $niname = $('#ni').prop('checked');
+                // 根据选中情况，决定是否匿名
+                if ($niname) {
+                    $nickname = "路人甲";
+                }
+                // 判断用户输入
+                if ($nickname.length !== 0 && $content.length !== 0) {
+                    // 发表添加用户名和当前时间
+                    $("<p id='pName'></p>").text($nickname + " " + new Date().toLocaleTimeString())
+                        .appendTo($("#main"));
+                    // 发表添加用户输入的内容
+                    $("<p class='pContent'></p>").text($content).appendTo($("#main"));
+                    //发表完毕之后，清空文本框中的内容
+                    $("#nickname").val("");
+                    $("#content").val("");
+                } else {
+                    alert("昵称和内容不能为空");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="main">
+        <label for="nickname">昵称：</label><input type="text" name="nickname" id="nickname" />
+        <div id="dv">
+            <textarea id="content" cols="50" rows="10" maxlength="500"></textarea>
+        </div>
+        <div id="btndv">
+            <input type="checkbox" value="匿名" id="ni" />匿名
+            <input id="btn" type="button" value="发表" />
+        </div>
+        <hr style="border: 2px solid green" />
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" id="btn" value="随机">
+    <br>
+    <select id="sel">
+        <option>大连</option>
+        <option>天津</option>
+        <option>北京</option>
+        <option>上海</option>
+        <option>西安</option>
+        <option>成都</option>
+        <option>重庆</option>
+        <option>长沙</option>
+        <option>深圳</option>
+        <option>哈尔滨</option>
+    </select>
+    <script>
+        // 获取元素
+        var btn = document.getElementById("btn");
+        var sel = document.getElementById("sel");
+        var opts = sel.getElementsByTagName("option");
+        // 点击事件
+        btn.onclick = function () {
+            // 随机数字向下取整
+            var n = Math.floor(Math.random() * opts.length);
+            // 对应下标选中属性
+            opts[n].selected = true;
+        };
+    </script>
+</body>
+</html>

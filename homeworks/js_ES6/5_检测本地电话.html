@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function testReg() {
+            var str = prompt("请输入一组座机号码");
+            if (/^\d{3,4}\-\d{8}$/.test(str)) {
+                alert("输入正确，为本地号码");
+            } else {
+                alert("输入错误，非本地号码");
+            }
+        }
+        testReg();
+    </script>
+</body>
+
+</html>

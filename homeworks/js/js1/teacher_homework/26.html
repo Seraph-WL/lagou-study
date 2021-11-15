@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26_质数</title>
+    <script>
+        var num = parseInt(prompt("请输入一个正整数"));
+
+        // 统计一个数约数的个数
+        // var count = 0;
+        // for (var i = 1; i <= num; i++) {
+        //     if (num % i === 0) {
+        //         count++ ;
+        //     }
+        // }
+        // if (count === 2) {
+        //     alert("这个数是一个质数");
+        // }else {
+        //     alert("这个数不是一个质数");
+        // }
+
+        // 利用 break 简化代码
+        //  如果除了 1 和 自身之外，还有其他的任何一个约数，说明就不是质数
+        // 在 1 到 根号 n 之间要是没有约数，在根号 n 到 n 之间也不会有约数
+        var count = 0;
+        for (var i = 2; i <= Math.sqrt(num); i++) {
+            if(num % i === 0) {
+                // 如果这个条件成立说明肯定有其他约数，就不是质数
+                // 记录一下他不是质数的证据
+                count = 1;
+                break;
+            }
+        }
+        // 如果循环结束后都没有遇到 break，count依旧会是 0 ，说明是个质数
+        if (count === 0 && num !== 1) {
+            alert("这个数是一个质数");
+        }else {
+            alert("这个数不是一个质数");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

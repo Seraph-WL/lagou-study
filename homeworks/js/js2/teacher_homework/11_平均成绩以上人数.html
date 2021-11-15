@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		// 思路：平均成绩人数 → 平均成绩 → 10 个人的总成绩
+
+		var arr = [54,69,78,74,90,49,65,88,100,83];
+		// 求十个人的总成绩
+		// 累加器求和
+		var sum = 0;
+		// 循环遍历数组，
+		for (var i = 0 ; i <= arr.length-1 ; i++) {
+			sum += arr[i];
+		}
+		// 求取平均成绩
+		var average = sum / arr.length;
+		// 判断大于等于平均成绩的人数，累计人数
+		// 累加器
+		var count = 0;
+		// 循环遍历数组，找出大于平均成绩的人数
+		for (var i = 0 ; i <= arr.length-1 ; i++) {
+			// 判断是否大于平均值，大于等于就给count加1
+			if(arr[i] >= average){
+				count++;
+			}
+		}
+		// 输出最终结果
+		console.log("大于等于平均成绩" + average + "的人数有" + count);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

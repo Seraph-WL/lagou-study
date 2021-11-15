@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var arr = [3,4,1,2,6,5];
+    // 思路1：sort 方法排序
+    function unique (arr) {
+      arr.sort(function (a, b) {
+        return a - b;
+      })
+      return arr;
+    }    
+    console.log(unique(arr));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

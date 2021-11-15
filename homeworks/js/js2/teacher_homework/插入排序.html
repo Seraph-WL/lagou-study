@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [89,34,76,66,98,25,67];
+    // var arr = [34,89,76,66,98,25,67];
+    // var arr = [34,76,89,66,98,25,67];
+    // 从下标为 1 的项开始，跟前面的进行对比
+    for (var i = 1 ; i < arr.length ; i++) {
+      // 定义一个对比 项的下标
+      var m = i - 1;
+      // 记录当前循环的数据项
+      var current = arr[i];
+      // 判断 i 项以前的项，有没有比当前项大的，如果有，就排到下一项
+      // 最终到 0 项结束，如果期间遇到比 i 项小的，停止循环判断
+      while (m >= 0 && arr[m] > current) {
+        arr[m + 1] = arr[m];  //大的拿到后面
+        // 让 i 项继续跟前面一项进行对比
+        m--;
+      }
+      // 循环结束后，要么 m 为 -1，要么就是当前的 m 项比 i 项小
+      // 将原来的 i 项插入到 m 项之后
+      arr[m + 1] = current;
+    }
+    console.log(arr);
+  </script>
+</body>
+</html>

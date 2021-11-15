@@ -1,0 +1,22 @@
+/* 初始化样式 */
+/* body主体字号、字体、颜色 */
+body {
+    font-size: 14px;
+    font-family: "Hiragino Sans GB","Microsoft Yahei","SimSun","Arial","Helvetica Neue","Helvetica";
+    color: #333;
+}
+/* a标签颜色、去除下划线 */
+a {
+    color: #555;
+    text-decoration: none;
+}
+/* 鼠标移到a标签变色 */
+a:hover {
+    color: #1E9AFF;
+}
+/* 公共样式 */
+/* 版心公共样式 */
+.inner-c {
+    width: 1240px;
+    margin: 0 auto;
+}

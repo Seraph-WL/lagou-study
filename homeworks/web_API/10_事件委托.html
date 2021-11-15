@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            width: 300px;
+            border: 1px dashed #0f0;
+            margin: 50px auto;
+            font-size: 24px;
+            line-height: 48px;
+            list-style: none;
+        }
+        li {
+            padding-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <ul id="foods">
+        <li>麻辣小龙虾</li>
+        <li>麻婆豆腐</li>
+        <li>夫妻肺片</li>
+        <li>老婆饼</li>
+        <li>火锅</li>
+        <li>烤肉</li>
+        <li>地三鲜</li>
+        <li>锅包肉</li>
+        <li>叫花鸡</li>
+    </ul>
+    <script>
+        // 获取元素
+        var foods = document.getElementById("foods");
+        var food = foods.children;
+        // 点击事件
+        foods.onclick = function (e) {
+            // 排他思想
+            // 统一样式
+            for (var i = 0 ; i < food.length ; i++) {
+                food[i].style.backgroundColor = "";
+            }
+            // 保留自己特殊样式
+            // e.target 属性记录的就是真正触发事件的事件源
+            e.target.style.backgroundColor = "lightgreen";
+        };
+    </script>
+</body>
+</html>

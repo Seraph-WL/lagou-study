@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 将字符串"i come from beijing"倒置，即控制台输出"beijing from come i"
+        var str = "i come from beijing";
+        var b = " ";
+        // 思路：字符串转为数组 -> 数组倒置 -> 转字符串 -> 输出字符串
+        // 字符串倒置函数
+        // 说明：输入一个字符串，转为数组，倒置，转字符串
+        function rev(char,b) {
+            // 链式调用方法
+            var a = char.split(b).reverse().join(b);
+            // 返回倒置的字符串
+            return a;
+        }
+        // 输出字符串
+        console.log(rev(str,b));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

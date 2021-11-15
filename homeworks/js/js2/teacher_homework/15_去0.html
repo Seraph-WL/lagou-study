@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var arr = [1,0,2,0,3,4,0,5,6,0,7];
+    // 函数参数：数组，指定的去除的数字
+    function removeN (arr, num) {
+      var newArr = [];
+      for (var i = 0 ; i <= arr.length - 1; i++) {
+        // 如果原始数组中的项不是 num ，添加到新数组
+        if (arr[i] !== num) {
+          newArr.push(arr[i]);
+        }
+      }
+      return newArr;
+    }
+    console.log(removeN(arr, 0));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

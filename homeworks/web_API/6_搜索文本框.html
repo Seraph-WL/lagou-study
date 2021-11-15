@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .getJiao {
+            color: black;
+        }
+        .shiJiao {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="请输入搜索关键字" class="shiJiao" id="textSearch">
+    <input type="button" value="搜索" id="btnSearch">
+    <script>
+        // 获取元素
+        var textSearch = document.getElementById("textSearch");
+        // 获得焦点 
+        textSearch.onfocus = function () {
+            if (this.value === "请输入搜索关键字") {
+                this.value = "";
+                this.className = "getJiao";
+            }
+        };
+        textSearch.onblur = function () {
+            if (this.value === "" || this.value === "请输入搜索关键字") {
+                this.value = "请输入搜索关键字";
+                this.className = "shiJiao";
+            }
+        };
+    </script>
+</body>
+</html>

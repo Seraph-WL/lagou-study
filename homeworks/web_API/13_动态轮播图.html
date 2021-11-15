@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 清除默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol {
+            list-style: none;
+        }
+        .lunbo {
+            position: relative;
+            width: 880px;
+            height: 550px;
+            border: 1px solid #333;
+            margin: 20px auto;
+        }
+        .lunbo .pic li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 880px;
+            height: 550px;
+            /* 图片消失 */
+            display: none;
+        }
+        .lunbo .pic .current {
+            display: block;
+        }
+        /* 按钮 */
+        .lunbo .btn a {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            margin-top: -20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            font: 20px/40px "宋体";
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .lunbo .btn .left {
+            left: 20px;
+        }
+        .lunbo .btn .right {
+            right: 20px;
+        }
+        .lunbo .btn a:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+        /* 下标 */
+        .lunbo .sub {
+            position: absolute;
+            left: 100px;
+            bottom: 50px;
+            width: 240px;
+        }
+        .lunbo .sub li {
+            /* 浮动 在一排 */
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+            background-color: rgba(255, 255, 255, 0.4);
+            font: 12px/20px "微软雅黑";
+            text-align: center;
+            color: #666;
+            /* 鼠标光标小手形状 */
+            cursor: pointer;
+        }
+        .lunbo .sub .current {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 轮播图大结构 -->
+    <div class="lunbo" id="lunbo">
+        <!-- 图片部分 -->
+        <ul class="pic" id="pic">
+            <li class="current"><img src="images/lunbo/c1.jpg" alt=""></li>
+            <li><img src="images/lunbo/c2.jpg" alt=""></li>
+            <li><img src="images/lunbo/c3.jpg" alt=""></li>
+            <li><img src="images/lunbo/c4.jpg" alt=""></li>
+            <li><img src="images/lunbo/c5.jpg" alt=""></li>
+            <li><img src="images/lunbo/c6.jpg" alt=""></li>
+        </ul>
+        <!-- 按钮 -->
+        <div class="btn">
+            <a href="javascript:;" class="left" id="leftbtn">&lt;</a>
+            <a href="javascript:;" class="right" id="rightbtn">&gt;</a>
+        </div>
+        <!-- 小圆点 -->
+        <ol class="sub" id="sub">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ol>
+    </div>
+    <script>
+        // 1.获取元素
+        var lunbo = document.getElementById("lunbo");
+        var ul = document.getElementById("pic");
+        var ulLis = ul.children;
+        var leftbtn = document.getElementById("leftbtn");
+        var rightbtn = document.getElementById("rightbtn");
+        var ol = document.getElementById("sub");
+        var olLis = ol.children;
+        // 全局信号量，存储的是要展示的图片所在 li 的下标
+        var idx = 0;
+        // 2.右按钮事件，切换到下一张
+        rightbtn.onclick = rightHandle;
+        // 3.左按钮事件，切换到上一张
+        leftbtn.onclick = function () {
+            // 信号量自减
+            idx--;
+            // 判断 idx 是否是超过最小的下标，如果是，就相当于从第一张要切换到最后一张
+            if (idx < 0) {
+                idx = ulLis.length - 1;
+            }
+            // 调用一个切换函数
+            change();
+        };
+        // 4.下标小圆点事件，点哪个小圆点，对应展示图片
+        for (var i = 0 ; i < olLis.length; i++) {
+            // 存储自己的下标，自定义下标属性
+            olLis[i].index = i;
+            // 给每个小圆点添加点击事件，然后获取对应下标，赋值给信号量
+            olLis[i].onclick = function () {
+                // 获取当前点击的元素的下标
+                // this.index
+                idx = this.index;
+                // 调用一个切换函数
+                change();
+            };
+        }
+        // 5.轮播图自动播放,执行类似右按钮的事件
+        var timer;
+        timer = setInterval(rightHandle,2000);
+        // 6.鼠标移上轮播图，停止自动轮播
+        lunbo.onmouseover = function () {
+            clearInterval(timer);
+        };
+        // 7.鼠标离开轮播图，重新开始自动轮播
+        lunbo.onmouseout = function () {
+            timer = setInterval(rightHandle,2000);
+        };
+        // 定义 右按钮事件函数
+        function rightHandle() {
+            // 信号量自加
+            idx++;
+            // 判断 idx 是否是超过最大的下标，如果是，就相当于从最后一张要切换到第一张
+            if (idx > ulLis.length - 1) {
+                idx = 0;
+            }
+            // 调用一个切换函数
+            change();
+        }
+        // 定义切换函数
+        function change() {
+            // 排他思想
+            // 对应控制
+            // 让所有 li 标签清除类名
+            for (var i = 0 ; i < ulLis.length ; i++) {
+                ulLis[i].className = "";
+                olLis[i].className = "";
+            }
+            // 保留自己
+            ulLis[idx].className = "current";
+            olLis[idx].className = "current";
+        }
+    </script>
+</body>
+</html>

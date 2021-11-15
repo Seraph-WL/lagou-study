@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 300px;
+            /* height: 200px; */
+            /* 多行文本：不设置高度，设置相同上下内边距，垂直居中 */
+            padding: 20px 0;
+            border: 1px solid red;
+            /* 文本水平居中 */
+            text-align: center;
+            /* 单行文本：行高等于盒子高度，垂直居中 */
+            /* line-height: 200px; */
+        }
+        /* 元素居中 */
+        .box {
+            width: 300px;
+            padding: 30px 0;
+            border: 1px solid #0f0;
+        }
+        .demo {
+            width: 100px;
+            height: 100px;
+            /* 元素水平居中 子元素宽度低于父元素 子元素添加外边距 */
+            margin: 0 auto;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <p>这是一段文字内容</p>
+    <div class="box">
+        <div class="demo"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户输入
+        var n = parseInt(prompt("请输入一个大于2的偶数",4));
+        // 思路：一个大于2的偶数拆分成两个质数之和 -> 判断质数
+        // 判断质数函数
+        // 说明：传入一个数，判断是否是质数，返回true或false
+        function isZs(a) {
+            //  如果除了 1 和 自身之外，还有其他的任何一个约数，说明就不是质数
+            // 在 1 到 根号 n 之间要是没有约数，在根号 n 到 n 之间也不会有约数
+            for (var i = 2; i <= Math.sqrt(a); i++) {
+                if(a % i === 0) {
+                    // 如果这个条件成立说明肯定有其他约数，就不是质数
+                    return false;
+                }
+            }
+            // 1 是质数
+            if (a !== 1) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        // 输出可拆分的质数之和，
+        for (var i = 2 ; i <= n ; i++) {
+            // 另一个质数
+            var j = n - i;
+            // i 和 j 都是质数
+            if (isZs(i)) {
+                if (isZs(j)) {
+                    alert(n + "可以拆分成两个质数" + i + "与" + j + "的和");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

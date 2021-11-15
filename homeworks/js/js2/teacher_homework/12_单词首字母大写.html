@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		// 将 "i love javascript very much" 的每个单词的第一个字母，变为大写。
+		// 思路：转为数组，对每一个单词进行首字母大写，转回字符串
+		var str = "i love javascript very much";
+		// 转为数组
+		var arr = str.split(" ");
+		// 循环遍历数组，给每个数据的首字符大写
+		for (var i = 0 ; i < arr.length ; i++) {
+			// 每个arr[i]还是一个字符串，就能使用字符串方法
+			// 首字符大写之后，拼接后面的字符
+			arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+		}
+		// 转回字符串
+		str = arr.join(" ");
+		console.log(str);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
