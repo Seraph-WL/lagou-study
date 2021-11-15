@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象字面量增强
+        const bar = "bar"
+        const age = "age"
+        const obj = {
+            name: "tom",
+            // 名字相同可只写一个
+            // bar: bar
+            bar,
+            // 普通函数方法化简，this指向自己
+            sayHi () {
+                console.log('hi')
+                console.log(this)
+            },
+            // 计算属性名
+            [age]: 18
+        }
+        // 添加属性
+        // obj[age] = 18
+        console.log(obj)
+        // obj.sayHi()
+    </script>
+</body>
+</html>

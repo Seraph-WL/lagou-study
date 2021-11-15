@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>	
+		// 思路：输出三位数的喇叭花数 → 判断喇叭花数 → 求阶乘函数
+		// 求一个数的阶乘函数
+		// 说明：传入一个数，返回这个数的阶乘
+		function jc(a) {
+			// 累乘器
+			var mul = 1;
+			// 循环累乘，从 a 乘到 1
+			for(var i = 1 ; i <= a ; i++){
+				mul *= i;
+			}
+			// 循环结束后，mul 存了 a 的阶乘
+			return mul;
+		}
+		// 制作判断喇叭花数函数
+		// 说明：传入一个数，返回是否是喇叭花数
+		function isLbh(a) {
+			// 拆分位数
+			var ge = a % 10,
+				shi = parseInt(a / 10) % 10,
+				bai = parseInt(a / 100);
+			// 计算阶乘之和
+			var sum = jc(ge) + jc(shi) + jc(bai);
+			// 判断阶乘和 sum 是否等于 a，等于就是喇叭花数
+			if(sum === a){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		// 输出所有三位的喇叭花数
+		for (var i = 100 ; i <= 999 ; i++) {
+			if(isLbh(i)){
+				console.log(i);
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

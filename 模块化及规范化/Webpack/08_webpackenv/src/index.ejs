@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link rel="stylesheet" href="./public/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <h1 onclick="showMsg()">Hello Webpack</h1>
+  <p class="web-font">验证字体文件</p>
+  <a href="index.html">首页</a>
+  <a href="about.html">关于</a>
+
+  <img src="<%= require('./image/icon/ok-black.png') %>">
+</body>
+</html>

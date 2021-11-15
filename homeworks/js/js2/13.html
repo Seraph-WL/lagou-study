@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 思路：定义中间变量存储比较过程中的最大值和最小值，每次比较过程除了存储一个更大的或更小的值，还要存储下标。
+		var arr = [54,69,78,74,90,49,65,88,100,83];
+        // 定义最大值和最小值及下标
+        var max = 0;
+        var min = 100;
+        var max_index = 0;
+        var min_index = 0;
+        // 循环遍历比较存储
+        for (var i = 0 ; i <= arr.length -1 ; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                max_index = i ;
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+                min_index = i ;
+            }
+        }
+        console.log("最大值是" + max + "下标是" + max_index);
+        console.log("最小值是" + min + "下标是" + min_index);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

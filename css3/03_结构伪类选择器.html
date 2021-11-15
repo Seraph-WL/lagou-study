@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box1 :first-child {
+            background-color: yellow;
+        }
+        .box1 :last-child {
+            background-color: green;
+        } */
+        /* .box1 :nth-child(3) {
+            background-color: red;
+        } */
+        /* odd奇数 even偶数 也可写n的公式 */
+        /* .box1 :nth-child(odd) {
+            background-color: red;
+        } */
+        /* .box1 :nth-child(3n) {
+            background-color: red;
+        } */
+        .box1 p:first-of-type {
+            background-color: pink;
+        }
+        .box1 p:last-of-type {
+            background-color: green;
+        }
+        .box1 h2:last-of-type {
+            background-color: blue;
+        }
+        .box1 p:nth-of-type(3) {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <h2>二级标题</h2>
+        <p>段落0</p>
+        <h2>二级标题</h2>
+        <p>段落1</p>
+        <p>段落2</p>
+        <p>段落3</p>
+        <p>段落4</p>
+        <p>段落5</p>
+    </div>
+</body>
+</html>

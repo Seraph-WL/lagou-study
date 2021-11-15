@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for (var i = 1000;i <= 9999;i++) {
+            var ge = i % 10;
+            var shi = parseInt((i % 100) / 10);
+            var bai = parseInt((i % 1000) / 100);
+            var qian = parseInt(i / 1000);
+            var sum = ge * ge * ge * ge + shi * shi * shi * shi + bai * bai * bai * bai + qian * qian * qian * qian;
+            if ( i == sum ) {
+                console.log(i);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

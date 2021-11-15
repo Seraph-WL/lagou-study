@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14_各个数位的和</title>
+    <script>
+        var a = parseInt(prompt("请输入一个三位数", 222));
+        //求个，十，百 
+        // 155
+        var ge = a % 10;
+        var shi = parseInt(a /10) % 10;
+        var bai = parseInt(a /100);
+        var sum = ge + shi + bai;
+        alert("三位数" + a + "的各个数的和:" + sum);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* 设置主要内容区域 */
+.content {
+    width: 100%;
+    /* 底部设置边框 */
+    /* border-bottom: 1px solid #E5E5E5; */
+    background-color: #FAFAFC;
+}
+.content .content-a {
+    position: relative;
+    width: 100%;
+    background-color: #5D1AFF;
+    z-index: 1;
+}
+.content .content-b {
+    background-color: #fff;
+}
+.content .content-c {
+    height: 471px;
+    margin-top: 30px;
+    background-color: #F5F5F5;
+}

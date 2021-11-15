@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 简单方式
+        // 1、new Object()
+        // var person = new Object();
+        // person.name = "Bob";
+        // person.age = 18;
+        // person.sayName = function () {
+        //     console.log(this.name);
+        // };
+        // person.sayName();
+    
+        // 2、对象字面量化简
+        // var person1 = {
+        //     name : "Bob",
+        //     age : 18,
+        //     sayName : function () {
+        //         console.log(this.name);
+        //     }
+        // };
+        // var person2 = {
+        //     name : "Mike",
+        //     age : 20,
+        //     sayName : function () {
+        //         console.log(this.name);
+        //     }
+        // };
+        // person1.sayName();
+        // person2.sayName();
+    
+        // 3、工厂函数
+        // function createPerson(name,age) {
+        //     // 添加一个新对象
+        //     var person = new Object();
+        //     person.name = name;
+        //     person.age = age;
+        //     person.sayName = function () {
+        //         console.log(this.name);
+        //     };
+        //     // 没有返回值，相当于局部创建一个变量，接收了一个对象
+        //     // 必须有返回值 添加给指定变量 函数调用多次生成多个对象
+        //     return person;
+        // }
+        // 对象字面量创建函数
+        // function createPerson(name,age) {
+        //     return {
+        //         name : name,
+        //         age : age,
+        //         sayName : function () {
+        //             console.log(this.name);
+        //         }
+        //     };
+        // }
+        // 生成真正的对象
+        // var person1 = createPerson("John",19);
+        // var person2 = createPerson("Mike",18);
+        // person1.sayName();
+    
+        // var arr = [1,3];
+        // console.log(arr instanceof Array);
+        // console.log(person1 instanceof Object);
+
+
+        // 4、自定义构造函数
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayName = function () {
+                console.log(this.name);
+            };
+        }
+        // 生成对象实例
+        // new 关键字的用途
+        // 1.创建一个新对象
+        // 2.将函数内部的 this 指向了这个新对象
+        // 3.执行构造函数内部的代码
+        // 4.将新对象作为返回值
+        var person1 = new Person("Bob", 18);
+        var person2 = new Person("Mike", 20);
+        // 演示 new 的功能
+        // function Person(name,age) {
+        //     // var instance = new Object();
+        //     // this = instance;
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sayName = function () {
+        //         console.log(this.name);
+        //     };
+        //     // return instance;
+        // }
+        // 调用方法
+        person1.sayName();
+        person2.sayName();
+
+        // 通过构造函数生成的实例是可以找到自己当初的构造函数的
+        var arr = new Array(1, 2);
+        console.log(arr);
+        // constructor 对象的属性，构造器、构造函数
+        // 每个对象的 constructor 属性值就是生成这个对象的构造函数
+        // console.log(arr.constructor);
+        // console.log(person1.constructor);
+
+        // 判断一个对象的具体对象类型，需要使用 instanceof 进行判断
+        console.log(person1 instanceof Person);
+        console.log(person1 instanceof Array);
+    </script>
+</body>
+</html>

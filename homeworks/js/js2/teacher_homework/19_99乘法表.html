@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // 直接输出
+    // 外层循环遍历 1-9的数字
+    for (var i = 1 ; i <= 9 ; i++) {
+      // 内层循环遍历 1-i 的数字
+      // 每次存储这次的所有输出的字符串
+      var str = "";
+      for (var j = 1 ; j <= i ; j++) {
+        str += i + "×" + j + "=" +  i * j + " ";
+      }
+      // 控制台输出，需要带回车换行符号
+      console.log(str + "\n");
+    }
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

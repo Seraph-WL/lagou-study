@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 第一种 标准流margin居中：子盒子宽度低于父盒子宽度，可以设置子盒子的 margin 值，水平方向的值都设置为 auto。 */
+        .box1 {
+            width: 400px;
+            /* 垂直居中 */
+            padding: 50px 0;
+            border: 10px solid #00f;
+        }
+        .demo1 {
+            width: 100px;
+            height: 100px;
+            /* 水平居中 */
+            margin: 0 auto;
+            background-color: springgreen;
+        }
+        /* 第二种 宽高已知 子绝父相 */
+        .box2 {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 10px solid #f0f;
+            background-color: steelblue;
+        }
+        .demo2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            margin-left: -100px;
+            margin-top: -100px;
+            background-color: thistle;
+        }
+        /* 第三种 宽高未知 子绝父相 */
+        .box3 {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 10px solid #ff0;
+            background-color: tomato;
+        }
+        .demo3 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+            background-color: turquoise;
+        }
+        /* 第4种 平移+定位 */
+        .box4 {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 10px solid #0ff;
+            background-color: violet;
+        }
+        .demo4 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            transform: translate(-50%,-50%);
+        }
+        /* 第5种 table-cell布局 */
+        .box5 {
+            display: table-cell;
+            vertical-align: middle;
+            width: 400px;
+            height: 400px;
+            border: 10px solid rgb(0, 255, 98);
+            background-color: rgb(238, 130, 197);
+        }
+        .demo5 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: rgb(50, 187, 205);
+        }
+        /* 第6种 flex布局 */
+        .box6 {
+            display: flex;
+            /* 垂直居中 */
+            align-items: center;
+            /* 水平居中 */
+            justify-content: center;
+            width: 400px;
+            height: 400px;
+            border: 10px solid rgb(200, 255, 0);
+            background-color: rgb(234, 130, 238);
+        }
+        .demo6 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(50, 205, 146);
+        }
+        /* 第7种 平移 */
+        .box7 {
+            width: 400px;
+            height: 400px;
+            border: 10px solid #0ff;
+            background-color: violet;
+        }
+        .demo7 {
+            width: 200px;
+            height: 200px;
+            margin-left: 50%;
+            margin-top: 50%;
+            background-color: yellowgreen;
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="demo1"></div>
+    </div>
+    <div class="box2">
+        <div class="demo2"></div>
+    </div>
+    <div class="box3">
+        <div class="demo3"></div>
+    </div>
+    <div class="box4">
+        <div class="demo4"></div>
+    </div>
+    <div class="box5">
+        <div class="demo5"></div>
+    </div>
+    <div class="box6">
+        <div class="demo6"></div>
+    </div>
+    <div class="box7">
+        <div class="demo7"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">这是原始的 div1 <span>span1</span></div>
+    <input type="text" value="请输入用户名1"><br>
+    <input type="text" value="请输入用户名2"><br>
+    <textarea cols="30" rows="10">请输入自我介绍</textarea><br>
+    <select>
+        <option value="tianjin">天津</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+    </select>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        // 获取元素
+        var $box = $(".box")
+        var $input = $("input")
+        var $ta = $("textarea")
+        var $se = $("select")
+        var $opt = $("option")
+
+        // html 方法
+        // 什么都获取不到
+        // console.log($input.text())
+        // console.log($input.html())
+        // 获取内容
+        // console.log($ta.text())
+        // console.log($ta.html())
+        // 获取标签内部内容
+        // console.log($se.text())
+        // 获取内容及标签
+        // console.log($se.html())
+        // 三个标签内部内容都获取
+        // console.log($opt.text())
+        // 只获取第一个文案
+        // console.log($opt.html())
+
+        // 通过 val() 进行获取，原生js中的value属性
+        // 调用不了，没有value属性
+        // console.log($box.val())
+        // 获取第一个input标签内部的值
+        // console.log($input.val())
+        // console.log($ta.val())
+        // 默认获取当前选中的option的value值
+        // console.log($se.val())
+        // 自动选择获取第一个option的value值
+        // console.log($opt.val())
+
+        // 设置内容
+        // 所有文案都变
+        // $input.val("haha")
+        // $ta.val("haha")
+        // 默认选中项变为北京
+        // $se.val("beijing")
+        // 改value属性值
+        $opt.val("guangzhou")
+    </script>
+</body>
+
+</html>

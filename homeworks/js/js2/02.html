@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 思路：从自然数 1~100 依次找出盈数 -> 判断盈数 -> 求约数和 
+        // 求约数和函数
+        // 说明：传入一个整数，返回这个整数的约数和
+        function yueshuhe(a) {
+            // 累加器
+            var sum = 0;
+            // 循环累加约数
+            for (var i = 1 ; i < a ; i++) {
+                if (a % i === 0) {
+                    sum += i;
+                }
+            }
+            // 循环结束后，sum 中存了 a 的约数和
+            return sum;
+        }
+        // 判断盈数
+        // 说明：传入一个整数，返回是否是盈数，true 或 false
+        function isYs(a) {
+			if (yueshuhe(a) > a) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+        // 输出一定范围的盈数
+        // 说明：传入一个整数，输出 1~a 范围的盈数
+        function scYs(a) {
+            // 穷举思想，输出 1 到 a 之间所有盈数
+            for (var i = 1 ; i <= a ; i++) {
+                if (isYs) {
+                    console.log(i);
+                }
+            }
+        }
+        // 输出 1~100 间的盈数
+        scYs(100);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

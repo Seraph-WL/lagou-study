@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <!-- required必填项 placeholder提示文本 -->
+        姓名：<input type="text" required="required" placeholder="请填入用户名"><br>
+        年龄：<input type="number" max="100" min="0" step="4" value="4"><br>
+        <!-- autofocus自动聚焦 autocomplete自动识别提交 -->
+        搜索框：<input type="search" autofocus="autofocus" autocomplete="on" name="sousuo"><br>
+        城市：<input type="text" list="list01"><br>
+        <!-- 预定义一些选项 -->
+        <datalist id="list01">
+            <option value="广州">gz</option>
+            <option value="深圳">sz</option>
+            <option value="北京">bj</option>
+            <option value="上海">
+        </datalist>
+        文件：<input type="file" multiple><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

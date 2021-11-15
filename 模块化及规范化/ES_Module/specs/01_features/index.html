@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES Module - 模块的特性</title>
+</head>
+
+<body>
+    <!-- 通过给 script 添加 type = module 的属性，就可以以 ES Module 的标准执行其中的 JS 代码了 -->
+    <script type="module">
+        console.log('this is es module')
+    </script>
+
+    <!-- 1. ESM 自动采用严格模式，忽略 'use strict' -->
+    <!-- 严格模式代表，不能直接在全局使用this，指向window对象 加入module是undefined -->
+    <script type="module">
+        console.log(this)
+    </script>
+
+    <!-- 2. 每个 ES Module 都是运行在单独的私有作用域中 避免全局变量作用域污染 -->
+    <script type="module">
+        var foo = 100
+        console.log(foo)
+    </script>
+    <script type="module">
+        console.log(foo)
+    </script>
+
+    <!-- 3. ESM 是通过 CORS 的方式请求外部 JS 模块的 不支持文件请求，只有httpserver可以，工作中不用担心 -->
+    <!-- <script type="module" src="https://unpkg.com/jquery@3.4.1/dist/jquery.min.js"></script> -->
+
+    <!-- 4. ESM 的 script 标签会延迟执行脚本 module相当于添加defer属性 不会阻碍页面的渲染 -->
+    <script defer src="demo.js"></script>
+    <p>需要显示的内容</p>
+</body>
+
+</html>

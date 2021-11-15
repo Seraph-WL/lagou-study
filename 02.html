@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [0,1,2,3,4,8,6,7];
+        function isTrue(a) {
+            if (arr.length >= 2 && arr.length <= 1000) {
+                if (arr[0] === 0 && arr[1] === 1) {
+                    var count = 0;
+                    for (var i = 0 ; i <= arr.length - 3 ; i++) {
+                        if (arr[i+1] > arr[i]) {
+                            var m1 = arr[i+1] - arr[i];
+                            var m2 = arr[i+2] - arr[i+1];
+                            if (m2 == m1 || m2 == m1 - 1 || m2 == m1 + 1) {
+                                count++;
+                            } else {
+                                return false;
+                            }
+                        }
+                    }
+                    if (count == arr.length - 2) {
+                        return true;
+                    }
+                }
+            }
+        }
+        if (isTrue(arr) == true) {
+            console.log(true);
+        } else {
+            console.log(false);
+        }
+        // console.log(isTrue(arr));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

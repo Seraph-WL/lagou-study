@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = ("div#demo.demo");
+        var reg = /^(\w+)#(\w+)\.(\w+)$/;
+        var str1 = str.replace(reg, function (match, $1, $2, $3) {
+            return "<" + $1 + " id=\"" + $2 + "\" class=\"" + $3 + "\"></" + $1 + ">";
+        });
+        alert(str1);
+    </script>
+</body>
+
+</html>

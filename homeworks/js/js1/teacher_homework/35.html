@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17_判断这个年是否是闰年</title>
+    <script>
+        var month = parseInt(prompt("请输入一个月份"));
+        // 输出对应的天数
+        switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            alert("这个月有31天");
+            break;
+        case 2:
+            var year = parseInt(prompt("请输入一个年份"));
+            if (year % 100 != 0) {
+                // 非整百年数除以4，无余为闰，有余不闰
+                if (year % 4 == 0) {
+                    alert("这个月有29天");
+                }else {
+                    alert("这个月有28天");
+                }
+            }else {
+                // 整百年数除以400，无余为闰，有余不闰
+                if (year % 400 == 0) {
+                    alert("这个月有29天");
+                }else {
+                    alert("这个月有28天");
+                }
+            }
+            break;
+        default:
+            alert("这个月有30天");
+        }
+
+        // var month = parseInt(prompt('请输入月份'));
+        // switch (month) {
+        //     case 1:
+        //     case 3:
+        //     case 5:
+        //     case 7:
+        //     case 8:
+        //     case 10:
+        //     case 12:
+        //         alert(year + '年的' + month + "月有31天");
+        //         break;
+        //     case 2:
+        //         var year = parseInt(prompt('请输入年份'));
+        //         if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+        //             alert(year + '年的' + month + "月有29天");
+        //         } else {
+        //             alert(year + '年的' + month + "月有28天");
+        //         }
+        //         break;
+        //     default:
+        //         alert(year + '年的' + month + "月有30天");
+        //         break;
+        // }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>	
+		// 思路：输出亲密数 → 判断亲密数 → 约数和函数
+		// 求约数和函数
+		// 说明：传入一个整数，返回这个整数的约数和
+		function yueshuhe(a) {
+			// 累加器
+			var sum = 0;
+			// 循环累加约数
+			for(var i = 1 ; i < a ; i++){
+				if(a % i === 0){
+					sum+=i;
+				}
+			}
+			// 循环结束后，sum 中存了 a 的约数和
+			return sum;
+		}
+		// 制作判断亲密数函数
+		// 说明：输入一个数，判断是否有亲密数
+		function isQm(a) {
+			// 一个数如果有亲密数，那么这个亲密数肯定是 a 的约数和
+			// 直接求 a 的约数和
+			var b = yueshuhe(a);
+			// 反推 b 的约数和是否等于 a，如果相等就是亲密数，a 不能等于 b
+			if (yueshuhe(b) === a && a != b) {
+				return true;
+			}else{
+				return false;
+			}
+		}
+		// 直接输出 2000 以内的亲密数
+		// for (var i = 1 ; i <= 2000 ; i++) {
+		// 	var j = yueshuhe(i);
+		// 	if (isQm(i) && j <= 2000) {
+		// 		console.log(i,j);
+		// 	}
+		// }
+		for (var i = 1 ; i <= 2000 ; i++) {			
+			if (isQm(i)) {
+				var j = yueshuhe(i);
+				if (j <= 2000) {
+					console.log(i,j);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

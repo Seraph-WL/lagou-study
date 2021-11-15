@@ -1,0 +1,7 @@
+/* 设置主要内容区域 */
+.content {
+    width: 100%;
+    /* 底部设置边框 */
+    border-bottom: 1px solid #ebebeb;
+    background-color: #fff;
+}

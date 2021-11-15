@@ -1,0 +1,117 @@
+/* 主要内容区域中的分类和焦点图 */
+.content .main {
+    width: 100%;
+    height: 376px;
+    padding-top: 33px;
+}
+
+/* 侧边栏 */
+.content .main .aside {
+    float: left;
+    width: 306px;
+    height: 376px;
+    /* background-color: plum; */
+}
+.content .main .aside .classify {
+    width: 306px;
+    height: 376px;
+}
+.content .main .aside .classify li {
+    position: relative;
+    width: 100%;
+    height: 47px;
+    line-height: 47px;
+}
+.content .main .aside .classify li h2 {
+    float: left;
+    margin-right: 12px;
+    font-size: 18px;
+}
+/* 不用设置宽度 内部元素也会浮动 宽度自动撑开 */
+.content .main .aside .classify li p {
+    float: left;
+}
+/* 设置浮动 因为自己有行高 盒模型属性 排成一排 自动撑宽高 */
+.content .main .aside .classify li p a {
+    float: left;
+    margin-right: 24px;
+}
+.content .main .aside .classify li p a:hover {
+    text-decoration: underline;
+}
+/* 小钩子 定位 不是精灵图就0 0 */
+.content .main .aside .classify li b {
+    position: absolute;
+    right: 8px;
+    top: 19px;
+    width: 6px;
+    height: 11px;
+    background: url(../images/main_list_arrow.png) no-repeat 0 0;
+}
+
+/* 焦点图  轮播图浮动做出效果 父级进行定位 */
+.content .main .banner {
+    float: right;
+    width: 840px;
+    height: 346px;
+    margin-top: 13px;
+    background-color: yellow;
+    position: relative;
+    /* 隐藏后面图片 */
+    overflow: hidden;
+}
+/* 图像向左运动 left值为负不断变化 */
+.content .main .banner ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6000px;
+    height: 346px;
+} 
+.content .main .banner ul li {
+    float: left;
+    width: 840px;
+    height: 346px;
+}
+/* 左右箭头 */
+.content .main .banner .btn span {
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    background: url(../images/banner_arrow_left.png) no-repeat center center;
+    cursor: pointer;
+}
+.content .main .banner .btn .right-btn {
+    right: 0;
+    background-image: url(../images/banner_arrow_right.png);
+}
+.content .main .banner .btn .right-btn:hover {
+    background-image: url(../images/banner_arrow_right_highlight.png);
+}
+.content .main .banner .btn .left-btn:hover {
+    background-image: url(../images/banner_arrow_left_highlight.png);
+}
+/* 小圆点 */
+.content .main .banner ol {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    width: 75px;
+    height: 6px;
+    margin-left: -37.5px;
+}
+.content .main .banner ol li {
+    float: left;
+    width: 7px;
+    height: 6px;
+    margin: 0 4px;
+    border-radius: 3px;
+    background-color: rgba(255,255,255,0.4);
+}
+.content .main .banner ol li.current {
+    width: 13px;
+    margin: 0 1px;
+    background-color: #fff;
+}

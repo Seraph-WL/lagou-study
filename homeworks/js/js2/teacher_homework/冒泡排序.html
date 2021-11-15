@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var arr = [89,34,76,66,98,25,67];
+
+    // 数组有几项，外部比较项数减 1 次
+    for (var i = 1 ; i < arr.length ; i++) {
+      // 第 1 次判断次数为：循环数组项 - 1
+      // 第 2 次判断次数为：循环数组项 - 2
+      // 第 3 次判断次数为：循环数组项 - 3
+      // ……
+      for (var j = 0 ; j < arr.length - i; j++) {
+        if (arr[j] > arr[j+1]) {
+          // 值小的往前拿，值大的往后拿
+          var jVal = arr[j];
+          arr[j] = arr[j+1];
+          arr[j+1] = jVal;
+        }
+      }
+    }
+    console.log(arr);
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var n = parseInt(prompt("请输入一个数字","155"));
+        if (n % 5 == 0) {
+            if (n % 6 == 0) {
+                alert("这个数字同时能被5和6整除");
+            } else {
+                alert("这个数字能被5整除，但不能被6整除");
+            }
+        } else if (n % 6 == 0) {
+            if (n % 5 == 0) {
+                alert("这个数字同时能被5和6整除");
+            } else {
+                alert("这个数字能被6整除，但不能被5整除");
+            }
+        } else {
+            alert("这个数字既不能被6整除，也不能被5整除");
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

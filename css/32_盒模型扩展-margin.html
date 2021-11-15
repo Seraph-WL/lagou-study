@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 同级盒统一margin方向 解决margin塌陷 */
+        .box1 {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 150px;
+            background-color: skyblue;
+        }
+        .box2 {
+            width: 100px;
+            height: 100px;
+            /* margin-top: 100px; */
+            background-color: skyblue;
+        }
+        .box3 {
+            width: 100px;
+            /* height: 100px; */
+            height: 70px;
+            /* 解决margin塌陷 父子盒 */
+            /* border: 1px solid brown; */
+            padding-top: 30px;
+            margin-top: 50px;
+            background-color: red;
+        }
+        .box3 p {
+            width: 50px;
+            height: 50px;
+            /* margin-top: 30px; */
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        1
+    </div>
+    <div class="box2">
+        2
+    </div>
+    <div class="box3">
+        <p></p>
+    </div>
+</body>
+</html>

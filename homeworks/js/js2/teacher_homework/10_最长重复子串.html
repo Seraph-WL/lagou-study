@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		// 编写函数 maxr(char) 返回字符串 char 中最长的连续重复字母
+		// 比如 maxr("mmmiijjjjkkkkkkssptr") 返回 "kkkkkk"
+		console.log(maxr("mmmiijjkkkkkkssssssptr"));
+
+		// 定义函数
+		function maxr(char) {
+			// 利用变量存储字符串下标，进行两个字符的对比
+			var a = 0,
+				b = 1; //每次重新比较时 b 都应该比 a 大一个
+			// 中间的过渡变量，存储暂时的最长子串和最长长度
+			// 初始值必须是最短的，任意一个长度的子串都比 0 长，可以存入变量
+			var maxchar = "";
+			var maxlength = 0;
+			// a 循环从 0 开始到倒数第二个结束
+			while (a <= char.length - 2) {
+				// 每次都比较 a 位置与 b 位置的字符是否相等
+				if (char.charAt(a) === char.charAt(b)) {
+					// a 位置与 b 位置相等，给 b 加 1 进入下一次比较
+					b++;
+				} else {
+					// a 位置与 b 位置不相等，应该存最长子串和长度
+					// 存储之前先比较与原有的最长长度
+					// 如果最新长度更长，才能替换原有的长度、子串，如果小于之前的值，直接跳过
+					if (b - a > maxlength) {
+						maxlength = b - a;
+						maxchar = char.slice(a,b);
+					}
+					// 存完这一次的数据后就可以进入下一次重复子串比较
+					a = b;
+					b = a + 1;
+				}
+			}
+			// 循环结束后，已经存储最长子串，直接返回值
+			return maxchar;
+		}
+
+		// 如果考虑有同样长度的字符串，可以用数组存储
+		function maxr(char) {			
+			var a = 0,
+				b = 1; 
+			var maxchar = [""];
+			var maxlength = 0;		
+			while (a <= char.length - 2) {				
+				if(char.charAt(a) == char.charAt(b)){					
+					b++;
+				}else{
+					if (b - a > maxlength) {
+						maxlength = b - a;
+						maxchar = [char.slice(a,b)];
+					} else if (b - a === maxlength) {
+						maxchar.push(char.slice(a,b));
+					}
+					a = b;
+					b = a + 1;
+				}
+			}			
+			return maxchar;
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>33_测试者体重为标准体重还是超重还是偏瘦</title>
+    <script>
+        var height = parseFloat(prompt("请输入您的身高"));
+        var weight = parseFloat(prompt("请输入您的体重"));
+        var diff = weight - (height - 108) * 2;
+        if (diff > 10) {
+            alert("您的体重标准偏胖");
+        } else if (diff < -10) {
+            alert("您的体重标准偏瘦");
+        } else {
+            alert("您的体重标准正常");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

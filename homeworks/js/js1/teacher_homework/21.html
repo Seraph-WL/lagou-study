@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>21_计算n的阶乘</title>
+    <script>
+        var num = parseInt(prompt("请输入一个数字"));
+        var multi = 1;
+        for (var i = num; i >= 1; i--) {
+            console.log(i + "*" + multi + "=" + (multi * i));
+            multi = multi * i;
+        }
+        alert(num + "的阶乘是：" + multi);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

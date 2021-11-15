@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27_1-10000的质数</title>
+    <script>
+        // var str = "";
+        // for (var j = 1; j <= 10000; j++) {
+        //     // 统计一个数约数的个数
+        //     var count = 0;
+        //     for (var i = 1; i <= j; i++) {
+        //         if (j % i == 0) {
+        //             count ++ ;
+        //         }
+        //     }
+        //     if (count == 2) {
+        //         str += j + "、";
+        //     }
+
+        // }
+        // console.log(str + "是质数");
+
+        // 化简条件
+        waiceng : for (var j = 2; j <= 10000; j++) {
+            // 判断在 2 到 根号j 之间有没有其他的约数，如果有肯定不是质数，跳过这一次
+            for (var i = 2; i <= Math.sqrt(j); i++) {
+                if (j % i == 0) {
+                    // 如果存在一个约数，直接跳出这一次判断下一个质数就可以了
+                    continue waiceng;
+                }
+            }
+            // 只要能够执行到这个位置，说明没遇到过 continue
+            console.log(j);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

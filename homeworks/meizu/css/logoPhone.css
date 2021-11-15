@@ -1,0 +1,42 @@
+/* 通栏的大盒子 */
+.logo-phone {
+    width: 100%;
+    height: 79px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #EFEFEF;
+}
+.logo-phone-c {
+    height: 79px;
+}
+/* logo 部分 */
+.logo-phone-c .logo {
+    /* 改变元素加载模式 */
+    float: left;
+    /* 盒模型属性 */
+    width: 115px;
+    height: 19px;
+    padding-top: 28px;
+    padding-bottom: 32px;
+    margin-right: 126px;
+}
+.logo-phone-c .logo a {
+    /* logo 转成块元素 */
+    display: block;
+    width: 115px;
+    height: 20px;
+    background: url(../images/logo.png);
+    /* a标签的字缩进飞出盒子然后隐藏 */
+    text-indent: -999em;
+    overflow: hidden;
+}
+.logo-phone-c .phone-nav a {
+    display: block;
+    float: left;
+    padding: 0 18px;
+    margin-top: 32px;
+    font-size: 16px;
+    color: #333333;
+}
+.logo-phone-c .phone-nav a:hover {
+    color: #1E9AFF;
+}

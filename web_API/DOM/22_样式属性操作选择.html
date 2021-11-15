@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cls {
+          width: 100px;
+          height: 100px;
+          background-color: pink;
+        }
+    </style>
+    <script src="common.js"></script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+    <div id="box">文字</div>
+    <script>
+        // 问题：实际工作中我们应该选择哪种方法？
+        // 获取元素
+        // 存到变量，只调用一次函数，可以反复使用，浏览器做最少的事
+        var btn = my$("btn");
+        var box = my$("box");
+        // 给按钮添加事件
+        btn.onclick = function () {
+            // 1.通过更改类名 多个适用
+            // box.className = "cls";
+            // 2.通过元素对象的 style 属性进行设置 单条适用
+            box.style.width = "100px";
+            box.style.height = "200px";
+            box.style.backgroundColor = "yellow";
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		// 将字符串 "i come from beijing" 倒置，即控制台输出 "beijing from come i"
+		var str = "i come from beijing";
+		// 转数组、倒置、转字符串
+		str = str.split(" ").reverse().join(" ");
+		console.log(str);
+
+		// 函数方式
+		function rev(char,s) {
+			// 链式调用方法
+			char = char.split(s).reverse().join(s);
+			// 最终结果返回
+			return char;
+		}
+		console.log(rev(str," "));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

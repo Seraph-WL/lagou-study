@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/css/index.min.css">
+    <script src="scripts/jquery-1.12.4.min.js"></script>
+    <script src="scripts/template-native.js"></script>
+    <!-- 创建模板 -->
+    <script id="tem" type="text/html">
+        <!-- 将拿到的数据中 的 comments 变量进行遍历 -->
+    <!-- 在每个li标签中添加一个自定义标签属性，记录自己的id -->
+    <% for (var i=0 ; i < comments.length ; i++) { %>
+    <li uid="<%= comments[i].id %>">
+        <p class="floor">
+            <%= comments[i].id %>楼<a href="javascript:;" class="delete">删除</a>
+        </p>
+        <p class="author">层主：<span class="name">
+                <%= comments[i].username %>
+            </span></p>
+        <p class="content">
+            <%= comments[i].content %>
+        </p>
+    </li>
+    <% } %>
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="post">
+            <h2>海贼王</h2>
+            <p class="author">楼主：我是你的骑士MR</p>
+            <p class="txt">双皇势力所有战场连一个微小的胜利都没有！</p>
+        </div>
+        <div class="reply">
+            <h4>发表回复</h4>
+            <p>用户名：<input type="text" class="user"></p>
+            <textarea class="editor"></textarea>
+            <input type="button" value="发表" class="btn">
+        </div>
+        <div class="cmts">
+            <ul class="list">
+
+            </ul>
+        </div>
+    </div>
+    <script src="scripts/index.min.js"></script>
+</body>
+
+</html>

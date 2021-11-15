@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+    <button id="btn">按钮</button> 
+    <script>
+        // 获取元素
+        var inputs = document.getElementsByTagName("input");
+        // 批量获取焦点
+        for (var i = 0 ; i < inputs.length ; i++) {
+            // 每个input获取焦点
+            inputs[i].onfocus = function () {
+                // 排他思想 
+                // 1、所有统一基本样式
+                for (var j = 0 ; j < inputs.length ; j++) {
+                    inputs[j].style.backgroundColor = "white";
+                }
+                // 2、保留自己独特样式
+                this.style.backgroundColor = "gray";
+            };
+        }
+    </script>
+</body>
+</html>

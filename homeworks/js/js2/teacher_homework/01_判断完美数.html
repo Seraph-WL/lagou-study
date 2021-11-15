@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		// 用户输入
+		var n = parseInt(prompt("请输入一个正整数"));
+		// 思路：判断用户输入的是否是完美数→判断完美数函数 → 求约数和函数
+		// 求约数和函数
+		// 说明：传入一个整数，返回这个整数的约数和
+		function yueshuhe(a) {
+			// 累加器
+			var sum = 0;
+			// 循环累加约数
+			for (var i = 1 ; i < a ; i++) {
+				if (a % i === 0) {
+					sum+=i;
+				}
+			}
+			// 循环结束后，sum 中存了 a 的约数和
+			return sum;
+		}
+		// 判断完美数函数
+		// 说明：传入一个整数，返回是否是完美数，true 或 false
+		function isWm(a) {
+			if (yueshuhe(a) === a) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		// 判断用户输入的数据是否是完美数，弹出结果
+		if (isWm(n)) {
+			alert(n + "是一个完美数");
+		} else  {
+			alert(n + "不是一个完美数");
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

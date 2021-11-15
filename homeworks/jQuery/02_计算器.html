@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var result;
+            $("#btn").click(function () {
+                // 获取运算符号
+                var $oper = $("#operation>option:selected").text();
+                // 获取操作数
+                var val1 = parseFloat($("#num1").val());
+                var val2 = parseFloat($("#num2").val());
+                switch ($oper) {
+                    case "请选择":
+                        alert("请选择运算方式");
+                        break;
+                    case "+":
+                        result = val1 + val2;
+                        break;
+                    case "-":
+                        result = val1 - val2;
+                        break;
+                    case "*":
+                        result = val1 * val2;
+                        break;
+                    case "/":
+                        result = val1 / val2;
+                        break;
+                }
+                $("#result").val(result);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="text" value="" id="num1" />
+    <select id="operation">
+        <option value="0" selected="selected">请选择</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type="text" value="" id="num2" />
+    <input type="button" value="=" id="btn" />
+    <input type="text" id="result" />
+</body>
+
+</html>

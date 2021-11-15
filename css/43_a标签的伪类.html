@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 有先后顺序 */
+        /* link 访问前状态 */
+        a:link {
+            color: #333;
+        }
+        /* visited 访问后状态 */
+        a:visited {
+            color: #0f0;
+        }
+        /* hover 鼠标悬浮状态 */
+        a:hover {
+            color: #f00;
+        }
+        /* active 鼠标点击状态 */
+        a:active {
+            color: #00f;
+        }
+        /* 化简合写 */
+        /* a:link,a:visited {
+            color: #333;
+        }
+        a:hover {
+            color: #f00;
+        } */
+        a {
+            display: block;
+            width: 200px;
+            height: 50px;
+            background-color: cyan;
+            font: 18px/50px "宋体";
+            text-align: center;
+            text-decoration: none;
+            color: #0f0;
+        }
+        a:hover {
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度超级链接</a>
+</body>
+</html>

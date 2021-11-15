@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户输入
+        var n = parseInt(prompt("请输入一个整数","6"));
+        // 思路：求阶乘 -> 求所有阶乘和
+        // 求阶乘函数
+        // 说明：传入一个整数，求这个数的阶乘，返回阶乘值
+        function jc(a) {
+            // 累乘器
+            var mul = 1;
+            // a~1 整数累乘
+            for (var i = a ; i > 0 ; i--) {
+                mul *= i;
+            }
+            // 返回阶乘值
+            return mul;
+        }
+        // 求阶乘和函数
+        // 说明：传入一个整数，求这个数的阶乘和，返回阶乘和
+        function jch(a) {
+            // 累加器
+            var sum = 0;
+            // a~1 阶乘累加
+            for (var i = a; i > 0 ; i--) {
+                sum += jc(i);
+            }
+            // 返回阶乘和
+            return sum;
+        }
+        // 弹出阶乘和
+        alert(n + "的阶乘和为" + jch(n));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

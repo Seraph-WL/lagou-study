@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    var arr = ['a','a','a','b','b','c','c','c','c','d','d','d','d'];
+    // 思路：如果对象中存在对应的属性名，就加1，如果不存在就定义初始值1
+    function transformToObj (arr) {
+      var obj = {};
+      //数组遍历
+      for (var i = 0 ; i < arr.length ; i++) {
+        if (!obj[arr[i]]) {
+          // 如果对象中没有属性 arr[i]，那么就在对象中增加这一项，初始值定义为数字 1
+          obj[arr[i]] = 1;
+        } else {
+          // 如果已经存在了这一项，在原有计数的基础上加 1
+          obj[arr[i]] += 1;
+        }
+      }
+      return obj;
+    }    
+    console.log(transformToObj(arr));
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>	
+		// 用户输入
+		var n = parseInt(prompt("请输入一个整数"));
+		// 思路：求阶乘和→计算阶乘函数
+		// 求一个数的阶乘函数
+		// 说明：传入一个数，返回这个数的阶乘
+		function jc(a) {
+			// 累乘器
+			var mul = 1;
+			// 循环累乘，从 a 乘到 1
+			for (var i = 1 ; i <= a ; i++) {
+				mul *= i;
+			}
+			// 循环结束后，mul 存了 a 的阶乘
+			return mul;
+		}
+		// 制作阶乘和函数
+		// 说明：传入一个整数，返回从 1！到 n！的和
+		function jch(a) {
+			// 累加器
+			var sum = 0; 
+			// 循环累加每一次i的阶乘
+			for (var i = 1 ; i <= a ; i++) {
+				sum += jc(i);
+			}
+			// 输出阶乘和
+			return sum;
+		}
+		// 使用阶乘和函数输入用户输入的 n 的阶乘和
+		alert(n + "阶乘到1的阶乘和是" + jch(n));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

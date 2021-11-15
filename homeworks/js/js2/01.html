@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 用户输入
+        var num = parseInt(prompt("请输入一个整数判断是否是完美数","6"));
+        // 思路：先判断用户输入的数字是否是完美数 -> 判断完美数 -> 求约数和
+        // 求约数和函数
+        // 说明：传入一个整数，返回这个整数的约数和
+        function yueshuhe(a) {
+            // 累加器
+            var sum = 0;
+            // 循环累加约数
+            for (var i = 1 ; i < a ; i++) {
+                if (a % i === 0) {
+                    sum += i;
+                }
+            }
+            // 循环结束后，sum 中存了 a 的约数和
+            return sum;
+        }       
+        // 判断完美数函数
+		// 说明：传入一个整数，返回是否是完美数，true 或 false
+		function isWm(a) {
+			if (yueshuhe(a) === a) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+        // 弹出完美数函数
+        // 说明：传入一个整数，判断用户输入的数据是否是完美数，弹出结果
+        function scWm(a) {
+            if (isWm(a)) {
+                alert(a + "是一个完美数");
+            } else  {
+                alert(a + "不是一个完美数");
+            }
+        }
+		// 弹出结果
+        scWm(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

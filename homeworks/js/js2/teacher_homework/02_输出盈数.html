@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>	
+		// 思路：输出盈数 → 判断盈数函数 → 求约数和函数
+		// 求约数和函数
+		// 说明：传入一个整数，返回这个整数的约数和
+		function yueshuhe(a) {
+			// 累加器
+			var sum = 0;
+			// 循环累加约数
+			for (var i = 1 ; i < a ; i++) {
+				if (a % i === 0) {
+					sum+=i;
+				}
+			}
+			// 循环结束后，sum 中存了 a 的约数和
+			return sum;
+		}
+		// 判断盈数函数
+		// 说明：传入一个数，返回是否是盈数
+		function isYs(a) {
+			if (yueshuhe(a) > a) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+		// 输出一个范围内的盈数函数
+		// 说明：传入一个整数，输出 1 到整数之间的所有盈数
+		function scYs(a) {
+			// 穷举思想，输出 1 到 a 之间所有盈数
+			for (var i = 1 ; i <= a ; i++) {
+				if (isYs(i)) {
+					console.log(i);
+				}
+			}
+		}
+		// 输出 1 到 100 之间的盈数
+		scYs(100);
+		// scYs(10000);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

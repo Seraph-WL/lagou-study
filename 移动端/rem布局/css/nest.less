@@ -1,0 +1,33 @@
+// less 嵌套
+.header {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  // 后代选择器
+  .logo {
+    width: 100px;
+    height: 100px;
+    background-color: green;
+  }
+}
+.nav {
+  width: 200px;
+  height: 200px;
+  background-color: pink;
+  // 后代选择器
+  a {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    // 交集选择器
+    &.box {
+      background-color: yellowgreen;
+    }
+    // 伪类选择器
+    &:hover {
+      background-color: deeppink;
+    }
+  }
+  
+}

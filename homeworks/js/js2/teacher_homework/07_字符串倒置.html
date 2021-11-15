@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script>
+		// 编写函数 rev(char) 实现将字符串 char 倒置
+		// 比如 rev("spring") 返回 "gnirps"
+		// 思路：字符串转为单独字母组成的数组→数组倒序→转为字符串
+		var str = "summer";
+		console.log(rev(str));
+		// 定义函数
+		function rev(char) {
+			// 字符串转数组
+			var arr = char.split("");
+			// 数组倒序
+			arr.reverse();
+			// 数组转回字符串
+			char = arr.join("");
+			// 最终结果返回
+			return char;
+		}
+		// 简化步骤
+		function rev(char) {
+			// 链式调用方法
+			char = char.split("").reverse().join("");
+			// 最终结果返回
+			return char;
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

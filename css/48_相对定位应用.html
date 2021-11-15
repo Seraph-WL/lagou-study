@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .nav {
+            width: 1080px;
+            height: 50px;
+            margin: 100px auto;
+            background-color: cyan;
+            list-style: none;
+        }
+        .nav li {
+            float: left;
+            width: 180px;
+            height: 50px;
+        }
+        .nav li a {
+            display: block;
+            width: 180px;
+            height: 50px;
+            background-color: skyblue;
+            font: 18px/50px "微软雅黑";
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav li a:hover {
+            /* background-color: #ff0; */
+            /* border-top 鼠标移上去会将li盒子挤下去 加入position相对定位，盒子位置不变 */
+            position: relative;
+            top: -4px;
+            border-top: 4px solid gold;
+        }
+        p {
+            width: 200px;
+            border: 1px solid #f00;
+            font: 18px/36px "微软雅黑";
+            /* 缩进2个汉字 */
+            text-indent: 2em;
+        }
+        span {
+            position: relative;
+            top: -5px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">首页</a></li>
+    </ul>
+    <p>这是一段文字这是一段文字<span>[1]</span>这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字这是一段文字</p>
+</body>
+</html>

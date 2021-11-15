@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32_循环</title>
+    <script>
+        var sum = 0;
+        for (var i = 1;i <= 100; i++) {
+            sum += i;
+        }
+        alert("for语句：1+2+3+4+5+...+100   的值" + sum);
+
+        var sum_two = 0;
+        var a = 1;
+        do {
+            sum_two += a;
+            a++;
+        }while(a <= 100);
+        alert("do while语句：1+2+3+4+5+...+100   的值" + sum_two);
+
+        var sum_three = 0;
+        var b = 1;
+        while (b <= 100) {
+            sum_three += b;
+            b++;
+        }
+        alert("while语句：1+2+3+4+5+...+100   的值" + sum_three);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
