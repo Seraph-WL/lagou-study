@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 当父组件给子组件设置了属性， 但此属性在 props 中不存在， 这时会自动绑定到子组件的根元素上。 -->
+    <!-- 如果组件根元素已经存在了对应属性， 则会替换组件内部的值。 -->
+    <!-- class 与 style 是例外， 当内外都设置时， 属性会自动合并。 -->
+    <my-component
+      data-index="3"
+      :title="'示例标题内容'"
+      style="height: 200px;"
+      class="colorRed"
+    ></my-component>
+  </div>
+  <script src="lib/vue.js"></script>
+  <script>
+    Vue.component('MyComponent', {
+      // 不希望继承父组件设置的属性， 但只适用于普通属性， class 与 style 不受影响
+      inheritAttrs: false,
+      template: `
+      <div data-index="6"
+           title="旧的title"
+           class="abc" 
+           style="width: 200px;">
+        <p>这是组件的内容</p>
+      </div>
+      `
+    });
+
+    new Vue({
+      el: '#app',
+      data: {
+        
+      }
+    });
+  </script>
+</body>
+</html>
